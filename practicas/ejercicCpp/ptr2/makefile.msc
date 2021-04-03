@@ -1,0 +1,21 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: ptr2.exe ptr2a.exe
+
+ptr2a.exe: ptr2a.cpp
+	$(CC) $(CFLAGS)  ptr2a.cpp
+
+ptr2.exe: ptr2.cpp
+	$(CC) $(CFLAGS)  ptr2.cpp
+
+clean:
+	erase ptr2.exe ptr2a.exe

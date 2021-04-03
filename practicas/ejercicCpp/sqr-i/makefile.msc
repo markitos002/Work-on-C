@@ -1,0 +1,18 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: sqr-i.exe
+
+sqr-i.exe: sqr-i.cpp
+	$(CC) $(CFLAGS)  sqr-i.cpp
+
+clean:
+	erase sqr-i.exe

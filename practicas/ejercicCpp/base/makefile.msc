@@ -1,0 +1,26 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: base.exe base2.obj base3.obj
+
+base.exe: base.cpp
+	$(CC) $(CFLAGS)  base.cpp
+
+base2.obj: base2.cpp
+	@echo "This does not generate a full program"
+	$(CC) $(CFLAGS) -c base2.cpp
+
+base3.obj: base3.cpp
+	@echo "This does not generate a full program"
+	$(CC) $(CFLAGS) -c base3.cpp
+
+clean:
+	erase base.exe base2.obj base3.obj

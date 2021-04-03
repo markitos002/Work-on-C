@@ -1,0 +1,19 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: rec.exe
+
+rec.exe: rec.cpp
+	@echo "This compile will generate an error"
+	-$(CC) $(CFLAGS)  rec.cpp
+
+clean:
+	erase rec.exe

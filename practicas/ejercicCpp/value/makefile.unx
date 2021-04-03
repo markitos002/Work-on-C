@@ -1,0 +1,20 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: value ref big.o
+
+big.o: big.cc
+	$(CC) $(CFLAGS) -c big.cc
+
+value: value.cc
+	$(CC) $(CFLAGS) -o value value.cc
+
+ref: ref.cc
+	$(CC) $(CFLAGS) -o ref ref.cc
+
+clean:
+	rm big.o value ref
+	

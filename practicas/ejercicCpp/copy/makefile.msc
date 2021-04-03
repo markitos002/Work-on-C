@@ -1,0 +1,18 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: copy.exe
+
+copy.exe: copy.cpp
+	$(CC) $(CFLAGS)  copy.cpp
+
+clean:
+	erase copy.exe

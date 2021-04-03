@@ -1,0 +1,14 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: max
+
+max: max.cc
+	@echo "This compile generates a warning"
+	$(CC) $(CFLAGS) -o max max.cc
+
+clean:
+	rm max

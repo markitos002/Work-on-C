@@ -1,0 +1,24 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: length.obj rlen.obj
+
+length.obj: length.cpp
+	@echo "Warning, this generates an object file only"
+	@echo "This compile generates a warning message"
+	$(CC) -c $(CFLAGS) length.cpp
+
+rlen.obj: rlen.cpp
+	@echo "Warning, this generates an object file only"
+	$(CC) -c $(CFLAGS) rlen.cpp
+
+clean:
+	erase length.obj rlen.obj

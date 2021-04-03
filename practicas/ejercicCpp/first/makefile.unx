@@ -1,0 +1,16 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: first first.out
+
+first: first.cc
+	$(CC) $(CFLAGS) -o first first.cc
+
+first.out: first.cc
+	$(CC) -E $(CFLAGS) first.cc >first.out
+
+clean:
+	rm first.out first

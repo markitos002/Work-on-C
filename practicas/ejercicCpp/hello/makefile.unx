@@ -1,0 +1,11 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+hello: hello.cc
+	$(CC) $(CFLAGS) -o hello hello.cc
+
+clean:
+	rm hello

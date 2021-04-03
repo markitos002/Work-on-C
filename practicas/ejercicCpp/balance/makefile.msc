@@ -1,0 +1,19 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: balance.exe
+
+balance.exe: balance.cpp
+	@echo "The following compile may generate a warning"
+	$(CC) $(CFLAGS)  balance.cpp
+
+clean:
+	erase balance.exe

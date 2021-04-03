@@ -1,0 +1,19 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: max.exe
+
+max.exe: max.cpp
+	@echo "This compile generates a warning"
+	$(CC) $(CFLAGS)  max.cpp
+
+clean:
+	erase max.exe

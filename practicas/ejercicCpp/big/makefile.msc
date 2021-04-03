@@ -1,0 +1,19 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: big.exe
+
+big.exe: big.cpp
+	@echo The following compile generates a syntax error
+	$(CC) $(CFLAGS)  big.cpp
+
+clean:
+	erase big.exe

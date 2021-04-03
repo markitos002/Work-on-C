@@ -1,0 +1,19 @@
+#
+# Makefile for Borland's Borland-C++ compiler
+#
+CC=bcc
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-ml -- Large model
+#
+CFLAGS=-N -v -w -ml
+all: calc3.exe
+
+calc3.exe: calc3.cpp
+	$(CC) $(CFLAGS) -ecalc3 calc3.cpp
+
+clean.exe:
+	erase calc3.exe

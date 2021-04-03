@@ -1,0 +1,18 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: init-a.exe
+
+init-a.exe: init-a.cpp
+	$(CC) $(CFLAGS)  init-a.cpp
+
+clean:
+	erase init-a.exe

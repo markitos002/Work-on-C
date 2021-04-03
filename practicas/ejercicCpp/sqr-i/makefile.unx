@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: sqr-i
+
+sqr-i: sqr-i.cc
+	$(CC) $(CFLAGS) -o sqr-i sqr-i.cc
+
+clean:
+	rm sqr-i

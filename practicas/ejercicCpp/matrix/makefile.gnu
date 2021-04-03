@@ -1,0 +1,40 @@
+#
+# Makefile for the Free Software Foundations g++ compiler
+#
+CC=g++
+CFLAGS=-g -Wall
+all: matrix1.o matrix2.o matrix3.o matrix4.o \
+     matrix5.o matrix6.o matrix7.o matrix8.o matrix9.o
+
+matrix1.o:matrix1.cc
+	@echo "These commands generate object files only"
+	$(CC) $(CFLAGS) -c matrix1.cc
+ 
+matrix2.o:matrix2.cc
+	$(CC) $(CFLAGS) -c matrix2.cc
+ 
+matrix3.o:matrix3.cc
+	$(CC) $(CFLAGS) -c matrix3.cc
+ 
+matrix4.o:matrix4.cc
+	$(CC) $(CFLAGS) -c matrix4.cc
+ 
+matrix5.o:matrix5.cc
+	$(CC) $(CFLAGS) -c matrix5.cc
+ 
+matrix6.o:matrix6.cc
+	$(CC) $(CFLAGS) -c matrix6.cc
+ 
+matrix7.o:matrix7.cc
+	$(CC) $(CFLAGS) -c matrix7.cc
+ 
+matrix8.o:matrix8.cc
+	@echo "The following compile generates a warning"
+	$(CC) $(CFLAGS) -c matrix8.cc
+ 
+matrix9.o:matrix9.cc
+	@echo "The following compile generates a warning"
+	$(CC) $(CFLAGS) -c matrix9.cc
+
+clean:
+	rm matrix?.o

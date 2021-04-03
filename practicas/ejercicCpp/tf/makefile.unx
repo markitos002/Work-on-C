@@ -1,0 +1,11 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+tf:	main.cc count.cc
+	$(CC) $(CFLAGS) -o tf main.cc count.cc
+
+clean:
+	rm tf

@@ -1,0 +1,17 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+class.obj: class.cpp
+	@echo "This does not generate a full program"
+	$(CC) $(CFLAGS) -c class.cpp
+
+clean:
+	erase class.obj

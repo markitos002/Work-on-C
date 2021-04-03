@@ -1,0 +1,11 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+complex.o: complex.cc complex.h
+	$(CC) $(CFLAGS) -c complex.cc
+
+clean:
+	rm complex.o

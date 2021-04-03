@@ -1,0 +1,18 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: calc.exe
+
+calc.exe: calc.cpp
+	$(CC) $(CFLAGS)  calc.cpp
+
+clean:
+	erase calc.exe

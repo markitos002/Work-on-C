@@ -1,0 +1,27 @@
+#
+# Makefile for the Free Software Foundations g++ compiler
+#
+CC=g++
+CFLAGS=-g -Wall
+OBJS= stat.o ch_type.o token.o
+
+all: stat.out stat
+
+stat.out: stat
+	stat ../calc3/calc3.cc >stat.out
+
+stat: $(OBJS)
+	$(CC) $(CCFLAGS) -o stat $(OBJS)
+
+stat.o: stat.cc token.h
+	$(CC) $(CCFLAGS) -c stat.cc
+
+ch_type.o: ch_type.cc ch_type.h
+	$(CC) $(CCFLAGS) -c ch_type.cc
+
+token.o: token.cc token.h ch_type.h
+	$(CC) $(CCFLAGS) -c token.cc
+
+
+clean:
+	rm stat stat.o ch_type.o token.o

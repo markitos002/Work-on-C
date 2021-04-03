@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: def
+
+def: def.cc
+	$(CC) $(CFLAGS) -o def def.cc
+
+clean:
+	rm def

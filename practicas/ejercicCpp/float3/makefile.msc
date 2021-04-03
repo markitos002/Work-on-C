@@ -1,0 +1,16 @@
+#
+# Makefile for Microsoft Visual C++
+#
+C_COMPILE=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+float3.exe: float3.c
+	$(C_COMPILE) $(CFLAGS)  float3.c
+
+clean:
+	erase float3.exe
