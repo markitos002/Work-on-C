@@ -21,7 +21,7 @@ result = 0; /* initialize the varible result */
 while(1){
 
 
-	printf("Result: %d\n",result); /* print the result, it starts with  */
+	printf("Result : %d\n",result); /* print the result, it starts with  */
 
 	printf(" Enter operator and number: "); /* here the text it inputs the operator and the number */
 	fgets(line, sizeof(line), stdin);
