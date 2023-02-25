@@ -1,0 +1,16 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: seven count
+
+count: count.cc
+	$(CC) $(CFLAGS) -o count count.cc
+
+seven: seven.cc
+	$(CC) $(CFLAGS) -o seven seven.cc
+
+clean:
+	rm seven count

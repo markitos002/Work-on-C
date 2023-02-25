@@ -1,0 +1,21 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: first.exe first.out
+
+first.exe: first.cpp
+	$(CC) $(CFLAGS)  first.cpp
+
+first.out: first.cpp
+	cl $(CFLAGS) -E first.cpp >first.out
+
+clean:
+	erase first.out first.exe

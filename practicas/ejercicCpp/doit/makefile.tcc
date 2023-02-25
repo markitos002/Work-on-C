@@ -1,0 +1,18 @@
+#
+# Makefile for Borland's Turbo-C++ compiler
+#
+CC=tcc
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-ml -- Large model
+#
+CFLAGS=-N -v -w -ml
+doit_t.exe: doit_t.cpp
+	@echo "This compile generates an error"
+	-$(CC) $(CFLAGS) -edoit_t doit_t.cpp
+
+clean:
+	erase doit_t.exe

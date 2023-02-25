@@ -1,0 +1,21 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: good.exe bad.exe
+
+good.exe: good.cpp
+	$(CC) $(CFLAGS)  good.cpp
+
+bad.exe: bad.cpp
+	$(CC) $(CFLAGS)  bad.cpp
+
+clean:
+	erase good.exe bad.exe

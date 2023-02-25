@@ -1,0 +1,14 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: rec
+
+rec: rec.cc
+	@echo "This compile will generate an error"
+	-$(CC) $(CFLAGS) -o rec rec.cc
+
+clean:
+	rm rec

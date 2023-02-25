@@ -1,0 +1,16 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: good bad
+
+good: good.cc
+	$(CC) $(CFLAGS) -o good good.cc
+
+bad: bad.cc
+	$(CC) $(CFLAGS) -o bad bad.cc
+
+clean:
+	rm good bad

@@ -1,0 +1,16 @@
+#
+# Makefile for Microsoft Visual C++
+#
+C_COMPILE=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+fun-file.exe: fun-file.c
+	$(C_COMPILE) $(CFLAGS)  fun-file.c
+
+clean:
+	erase fun-file.exe

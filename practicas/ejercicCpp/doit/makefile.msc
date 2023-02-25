@@ -1,0 +1,17 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+doit_t.exe: doit_t.cpp
+	@echo "This compile generates an error"
+	-$(CC) $(CFLAGS)  doit_t.cpp
+
+clean:
+	erase doit_t.exe

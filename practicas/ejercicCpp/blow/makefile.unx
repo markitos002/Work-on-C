@@ -1,0 +1,11 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+blow: blow.cc
+	$(CC) $(CFLAGS) -o blow blow.cc
+
+clean:
+	rm blow

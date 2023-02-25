@@ -1,0 +1,16 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+complex.obj: complex.cpp complex.h
+	$(CC) $(CFLAGS) -c complex.cpp
+
+clean:
+	erase complex.obj

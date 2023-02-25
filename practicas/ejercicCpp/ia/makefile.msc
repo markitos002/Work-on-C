@@ -1,0 +1,27 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+SRC=hist.cpp ia.cpp
+OBJ=hist.obj ia.obj
+
+all: hist.exe
+	
+hist.exe: $(OBJ)
+	$(CC) $(CFLAGS)  $(OBJ)
+
+hist.obj: ia.h hist.cpp
+	$(CC) $(CFLAGS) -c hist.cpp
+
+ia.obj: ia.h ia.cpp
+	$(CC) $(CFLAGS) -c ia.cpp
+
+clean:
+	erase hist.exe io.obj hist.obj

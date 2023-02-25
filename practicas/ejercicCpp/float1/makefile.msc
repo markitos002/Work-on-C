@@ -1,0 +1,19 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: float1.exe
+
+float1.exe: float1.cpp
+	@echo "This program will generate a warning when compiled"
+	$(CC) $(CFLAGS)  float1.cpp
+
+clean:
+	erase float1.exe

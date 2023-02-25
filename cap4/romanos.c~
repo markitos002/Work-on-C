@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main(){
+
+int i,j,k,l,d,c,uni;
+
+
+
+for(i=1;i<=100;i++){
+   //printf("%d",i);
+  uni = i%10; i = i/10;
+  dec = i%10; i = i/10;
+  cent = i%10; i =i/10;
+
+switch(uni){
+   case 1: printf("I ");
+   case 2: printf("II ");
+   case 3: printf("III ");
+   case 4: printf("IV ");
+   case 5: printf("V ");
+   case 6: printf("VI ");
+   case 7: printf("VII ");
+   case 8: printf("VIII ");
+   case 9: printf("IX ");
+   }
+switch(dec){
+   case 1: printf("X ");
+   case 2: printf("XX ");
+   case 3: printf("XXX ");
+   case 4: printf("XL ");
+   case 5: printf("L ");
+   case 6: printf("LX ");
+   case 7: printf("LXX ");
+   case 8: printf("LXXX ");
+   case 9: printf("XC ");
+   }
+switch(cent){
+   case 1: printf("C");
+
+}
+printf("\n");
+return 0;
+}

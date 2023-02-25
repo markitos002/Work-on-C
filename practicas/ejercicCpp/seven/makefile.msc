@@ -1,0 +1,21 @@
+#
+# Makefile for Microsoft Visual C++
+#
+CC=cl
+#
+# Flags 
+#	AL -- Compile for large model
+#	Zi -- Enable debugging
+#	W1 -- Turn on warnings
+#
+CFLAGS=/AL /Zi /W1
+all: seven.exe count.exe
+
+count.exe: count.cpp
+	$(CC) $(CFLAGS)  count.cpp
+
+seven.exe: seven.cpp
+	$(CC) $(CFLAGS)  seven.cpp
+
+clean:
+	erase seven.exe count.exe

@@ -1,0 +1,27 @@
+#
+# Makefile for Borland's Turbo-C++ compiler
+#
+CC=tcc
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-ml -- Large model
+#
+CFLAGS=-N -v -w -ml
+all: stack_c.exe stack_d1.obj stackex1.exe
+
+stack_d1.obj: stack_d1.cpp
+	$(CC) $(CFLAGS) -c stack_d1.cpp
+
+stackex1.exe: stackex1.cpp
+	@echo "Warning: Some compilers doesn't handle exceptions yet"
+	@echo "  So this program may not compile"
+	-$(CC) $(CFLAGS) -estackex1 stackex1.cpp
+
+stack_c.exe: stack_c.cpp
+	$(CC) $(CFLAGS) -estack_c stack_c.cpp
+
+clean:
+	erase stack_c.exe stack_d1.obj stackex1.exe

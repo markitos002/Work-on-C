@@ -1,0 +1,13 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: print3
+
+print3: print3.cc
+	$(CC) $(CFLAGS) -o print3 print3.cc
+
+clean:
+	rm print3

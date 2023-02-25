@@ -1,0 +1,16 @@
+#
+# Makefile for many UNIX compilers using the
+# "standard" command name CC
+#
+CC=CC
+CFLAGS=-g
+all: io.out io
+
+io.out: io
+	io >io.out
+
+io: io.cc
+	$(CC) $(CFLAGS) -o io io.cc
+
+clean:
+	rm io 

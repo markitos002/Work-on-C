@@ -1,0 +1,26 @@
+#
+# Makefile for Borland's Turbo-C++ compiler
+#
+CC=tcc
+#
+# Flags 
+#     	-N  -- Check for stack overflow
+#	-v  -- Enable debugging
+#	-w  -- Turn on all warnings
+#	-ml -- Large model
+#
+CFLAGS=-N -v -w -ml
+all: flush.exe cstop.obj flush2.exe
+
+flush.exe: flush.cpp
+	$(CC) $(CFLAGS) -eflush flush.cpp
+
+flush2.exe: flush2.cpp
+	$(CC) $(CFLAGS) -eflush2 flush2.cpp
+
+cstop.obj: cstop.cpp
+	@echo "Generates object file only"
+	$(CC) $(CFLAGS) -c cstop.cpp
+
+clean:
+	erase flush.exe cstop.obj flush2.exe
