@@ -93,3 +93,87 @@ else {
      }
 
 }///fin de la funcion final
+
+/* version recomendada por ChatGPT
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Funciones
+void adivina(void);
+void again(void);
+void final(int z);
+int repetir (int x, int y);
+
+int main(){
+
+    adivina();
+    again();
+
+    return 0;
+}
+
+void adivina(void){
+
+    int a,numero,w;
+
+    // Salida inicial
+    printf("\n\tBienvenido al juego:\n");
+    printf(">>>>  ADIVINA EL NUMERO 1 entre 1000 <<<<<\n");
+
+    // Generar número aleatorio
+    srand(time(NULL));
+    a = 1+(rand()%1000);
+    printf("Generando el numero...\n");
+    system("sleep 2");
+
+    // Pedir entrada del usuario
+    printf("Listo!!!, Intentalo, cual es?:\n");
+    scanf("%d",&numero);
+
+    // Comprobar si el usuario adivinó el número
+    if(numero == a ){
+       printf("Vaya adivinaste, como que eres brujo!!!\n");
+    }
+    else{
+       printf("Que triste, no le pegas ni al mundo hinchado :-(\n");
+       w = repetir(numero,a);
+       final(w);
+    }
+}
+
+int repetir (int x, int y){
+    int i,r=1;
+
+    // Límite de intentos
+    while(i != y && r <= 10){
+        r++;
+        printf("\ningresa un nuevo numero:\n");
+        if(scanf("%d",&i) != 1){ // Validación de entrada
+            printf("Entrada inválida, intente de nuevo\n");
+            while(getchar() != '\n'); // Limpiar el buffer de entrada
+            continue;
+        }
+        if(i > y){
+            printf("Pista: muy alto, intente un numero mas bajo!\n");
+        }
+        else if(i < y){
+            printf("Pista: muy bajo, intente un numero mas alto!\n");
+        }
+        else {
+            i = y;
+        }
+    }
+    return r;
+}
+
+void again (void){
+    char o;
+
+    // Pedir entrada del usuario
+    printf("Quieres volver a jugar de nuevo S o N?\n");
+    scanf(" %c",&o);
+
+    if(o == 'S'  || o == 's
+*/
